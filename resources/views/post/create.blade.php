@@ -5,7 +5,10 @@
     <div class="col-md-10 mt-6">
         <div class="card-body">
             <h1 class="mt4">新規投稿</h1>
-            <form method="post" action="{{route('post,store')}}" enctype="multipart/form-data">
+            @if(session('message'))
+            <div class="alert alert-success">{{session('message')}}</div>
+            @endif
+            <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
                        @csrf
                 <div class="form-group">
                     <label for="title">件名</label>
