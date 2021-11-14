@@ -11,7 +11,8 @@
             <div class="card mb-4">
 
                     <div class="media flex-wrap w-100 align-items-center">
-                        <div class="media-body ml-3"> {{ $post->title }}
+                        <div class="media-body ml-3">
+                          <a href="{{route('post.show',$post)}}">{{ $post->title }}</a>
                             <div class="text-muted small">{{ $post->user->name }}</div>
 
                         </div>
