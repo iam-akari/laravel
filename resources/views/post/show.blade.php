@@ -7,6 +7,9 @@
       {{$post->user->name}}
       </div>
     <h4>{{$post->title}}</h4>
+    <span class="ml-auto">
+      <a href="{{route('post.edit',$post)}}"><button class="btn btn-primary">編集</button></a>
+    </span>
     </div>
   <div class="card-body">
     <p class="card-text">
