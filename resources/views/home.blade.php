@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
 {{$user->name}}さん、こんにちは！
+
+@if(session('message'))
+<div class="alert alert-success">{{session('message')}}</div>
+@endif
+
 <div class="card-header">
   一覧画面
 </div>

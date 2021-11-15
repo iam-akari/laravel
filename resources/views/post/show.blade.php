@@ -10,6 +10,13 @@
     <span class="ml-auto">
       <a href="{{route('post.edit',$post)}}"><button class="btn btn-primary">編集</button></a>
     </span>
+    <span class="ml-2">
+      <form method="post" action="{{route('post.destroy',$post)}}">
+        @csrf
+        @method('delete')
+        <button type="submit" class="btn btn-danger" onclick="return confirm('本当に削除しますか？');">削除</button>
+      </form>
+    </span>
     </div>
   <div class="card-body">
     <p class="card-text">
