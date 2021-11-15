@@ -22,8 +22,9 @@
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
 
-            <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('post.update',$post)}}" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="title">件名</label>
                     <input type="text" name="title" class="form-control" id="title"
