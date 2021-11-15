@@ -28,4 +28,10 @@ class HomeController extends Controller
         $user=auth()->user();
         return view('home',compact('posts','user'));
     }
+
+    public function mypost() {
+      $user=auth()->user()->id;
+      $posts=post::where('user_id',$user)->orderBy('created_at','desc')->get();
+      return view('mypost',compact('posts'));
+    }
 }
