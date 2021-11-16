@@ -76,16 +76,30 @@
         </nav>
 
         <main class="py-4">
+          @if(Auth::check())
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-4 col-lg-3">
                 @include('layouts.sidebar')
               </div>
               <div class="col-12 col-md-8 col-lg-9">
+                {{-- エラーメッセージ表示 --}}
+                @if($errors->any())
+                <div class="alert alert-danger">
+                <ul>
+                @foreach($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+                </ul>
+                </div>
+                @endif  
                 @yield('content')
               </div>
-            </div>  
+            </div>
           </div>
+          @else
+          @yield('content')
+          @endif
         </main>
     </div>
 </body>
